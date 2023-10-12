@@ -1,0 +1,16 @@
+version: '3'
+services:
+  ghost:
+    restart: always
+    build:
+      context: ./   
+    ports:
+      - "8080:8080"
+    environment:
+      - PORT=8080
+    volumes:
+      - ./content/data:/var/lib/ghost/content/data
+      - ./content/images:/var/lib/ghost/content/images
+      - ./content/logs:/var/lib/ghost/content/logs
+      - ./content/adapters:/var/lib/ghost/content/adapters
+      - ./content/themes:/var/lib/ghost/content/themes
